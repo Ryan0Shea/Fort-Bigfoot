@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fort McIntosh: Bigfoot Siege</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-container"></div>
+
+  <div id="crosshair" aria-hidden="true"></div>
+  <div id="hit-marker" aria-hidden="true"></div>
+
+  <div id="hud">
+    <div class="hud-row">
+      <span id="wave">Wave 0</span>
+      <span id="enemies">Enemies: 0</span>
+      <span id="score">Total: 0</span>
+      <span id="high-score">High: 0</span>
+      <span id="kills">Kills: 0</span>
+      <span id="clock">Time: 00:00</span>
+    </div>
+    <div class="hud-row">
+      <span id="ammo">Ammo: 1 / 24</span>
+      <span id="reload">Ready</span>
+      <span id="fort">Fort Integrity: 100%</span>
+      <span id="health">Health: 100</span>
+      <span id="rebuild-status">Rebuild: Ready (B)</span>
+    </div>
+    <div id="message" aria-live="polite"></div>
+    <div id="breach-warning" aria-live="assertive"></div>
+  </div>
+  <div id="build-info">Build</div>
+
+  <div id="start-overlay" class="overlay visible">
+    <div class="panel">
+      <h1 id="overlay-title">Fort McIntosh: Bigfoot Siege</h1>
+      <p id="overlay-description">
+        Stylized 1780 frontier-fort survival prototype. Defend the fort from wooden Bigfoot cutout attackers.
+      </p>
+      <div class="controls-grid">
+        <span>Move</span><strong>W A S D</strong>
+        <span>Look</span><strong>Mouse</strong>
+        <span>Fire Flintlock</span><strong>Left Click</strong>
+        <span>Reload</span><strong>R</strong>
+        <span>Interact / Repair</span><strong>E</strong>
+        <span>Rebuild Fort</span><strong>B</strong>
+        <span>Sprint</span><strong>Shift</strong>
+        <span>Release Cursor</span><strong>Esc</strong>
+      </div>
+      <button id="start-button" type="button">Click To Muster At The Fort</button>
+      <button id="pause-restart-button" type="button" class="secondary hidden">Restart Round</button>
+      <p class="small-note">Pointer lock is required for aiming.</p>
+    </div>
+  </div>
+
+  <div id="gameover-overlay" class="overlay">
+    <div class="panel">
+      <h2>Fort Breached</h2>
+      <p id="gameover-summary">The cutouts overran the inner yard.</p>
+      <button id="restart-button" type="button">Restart (Enter)</button>
+    </div>
+  </div>
+
+  <audio id="soundtrack" src="fort-mcintosh-demo2-low-vox.mp3" loop preload="auto"></audio>
+
+  <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+  <script src="bigfootData.js"></script>
+  <script src="main.js?v=20260601b"></script>
+</body>
+</html>
